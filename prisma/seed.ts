@@ -1,18 +1,9 @@
 'use server'
 import { PrismaClient } from '@prisma/client'
-import {faker} from "@faker-js/faker"
 const prisma = new PrismaClient()
 
 async function main() {
   // ** Generate user model
-  await prisma.todo.createMany({
-    data: Array.from({length:15},()=>(
-      {
-        title:faker.internet.email(),
-        body:faker.internet.username()
-      }
-    ))
-  })
 
 
   // ** Generate user model
